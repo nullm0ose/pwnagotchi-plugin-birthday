@@ -47,16 +47,17 @@ class Birthday(plugins.Plugin):
         if self.options['show_age']:
             age = self.calculate_age()
             age_labels = []
-            if age[0] > 0:
-                age_labels.append(f'{age[0]}yrs')
-            if age[1] > 0 and age[0] > 0:
+            if age[0] == 1:
+                age_labels.append(f'{age[0]}Yr')
+            elif age[0] > 1:
+                age_labels.append(f'{age[0]}Yrs')
+            if age[1] > 0:
                 age_labels.append(f'{age[1]}m')
-            elif age[1] > 0:
-                age_labels.append(f'{age[1]}m')
-            if age[2] > 0 and (age[0] > 0 or age[1] > 0):
-                age_labels.append(f'{age[2]}d')
-            elif age[2] > 0:
-                age_labels.append(f'{age[2]}d')
+            if age[2] > 0:
+                if age[0] < 1:
+                    age_labels.append(f'{age[2]} days')
+                else:
+                    age_labels.append(f'{age[2]}d')
             age_string = ' '.join(age_labels)
             ui.set('Age', age_string)
         elif self.options['show_birthday']:
@@ -74,7 +75,9 @@ class Birthday(plugins.Plugin):
         born_date = datetime.datetime.fromtimestamp(self.born_at)
         today = datetime.datetime.now()
         age = today - born_date
-        years = age.days // 365
-        months = (age.days % 365) // 30
-        days = (age.days % 365) % 30
-        return years, months
+        days = age.days
+        months = days // 30
+        years = months // 12
+        months %= 12
+        days %= 30
+        return years, months, days
