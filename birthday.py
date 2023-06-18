@@ -30,7 +30,7 @@ class Birthday(plugins.Plugin):
                                                          int(self.options['age_y_coord'])),
                                                label_font=fonts.Bold, text_font=fonts.Medium))
         elif self.options['show_birthday']:
-            ui.add_element('Birthday', LabeledValue(color=BLACK, label=' ♥ Born ', value='',
+            ui.add_element('Birthday', LabeledValue(color=BLACK, label=' ♥ Born: ', value='',
                                                     position=(int(self.options['age_x_coord']),
                                                               int(self.options['age_y_coord'])),
                                                     label_font=fonts.Bold, text_font=fonts.Medium))
