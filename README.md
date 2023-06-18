@@ -4,6 +4,8 @@ A plugin for your Pwnagotchi that automatically finds its birthday and displays 
 
 Age is based on the born_at value in the brain.json file.
 
+--Plugin inspired by Age/Strength Plugin from HannaDiamond. Age is displayed in date format instead of total_epochs 
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -49,8 +51,8 @@ Age is based on the born_at value in the brain.json file.
 
 You can customize the position of the displayed age on the Pwnagotchi UI by modifying the following options in the `config.toml` file:
 
-- `main.plugins.age.age_x_coord`: X-coordinate of the age display.
-- `main.plugins.age.age_y_coord`: Y-coordinate of the age display.
+- `main.plugins.birthday.age_x_coord`: X-coordinate of the age display.
+- `main.plugins.brithday.age_y_coord`: Y-coordinate of the age display.
 
 Feel free to adjust these values according to your preference.
 
