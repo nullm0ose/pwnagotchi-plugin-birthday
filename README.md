@@ -92,7 +92,7 @@ As of now this plugin is configured to display either the birthday OR the age. I
 
 ## Version
 
-- Version: 1.0.1
+- Version: 1.0.2
 
 ## License
 
