@@ -2,6 +2,7 @@ import os
 import json
 import logging
 import datetime
+from dateutil.relativedelta import relativedelta
 
 import pwnagotchi
 import pwnagotchi.plugins as plugins
@@ -74,10 +75,5 @@ class Birthday(plugins.Plugin):
     def calculate_age(self):
         born_date = datetime.datetime.fromtimestamp(self.born_at)
         today = datetime.datetime.now()
-        age = today - born_date
-        days = age.days
-        months = days // 30
-        years = months // 12
-        months %= 12
-        days %= 30
-        return years, months, days
+        age = relativedelta(today, born_date)
+        return age.years, age.months, age.days
