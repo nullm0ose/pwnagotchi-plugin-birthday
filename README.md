@@ -28,14 +28,22 @@ The Birthday Plugin has been tested on Pwnagotchi version 1.5.3 and 1.5.5, and i
 
 ## Installation
 
-1. Ensure you have the custom plugins directory set up:
+1. Create custom plugins directory if you havent already:
    ```
    mkdir /etc/pwnagotchi/custom-plugins
    ```
 
-2. Copy the `birthday.py` file to the custom plugins directory:
+2. Download the pluglin:
    ```
-   cp birthday.py /etc/pwnagotchi/custom-plugins
+   cd /etc/pwnagotchi/custom-plugins
+   ```
+   ```
+   git clone https://github.com/nullm0ose/pwnagotchi-plugin-birthday.git
+   ```
+
+4. Copy the `birthday.py` file to the custom plugins directory:
+   ```
+   cp /etc/pwnagotchi/custom-plugins/pwnagotchi-plugin-birthday/birthday.py /etc/pwnagotchi/custom-plugins
    ```
 
 3. Add the plugin configuration to the `config.toml` file:
