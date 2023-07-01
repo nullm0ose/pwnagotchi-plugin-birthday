@@ -30,7 +30,7 @@ The Birthday Plugin has been tested on Pwnagotchi version 1.5.3 and 1.5.5, and i
 
 1. Ensure you have the custom plugins directory set up:
    ```
-   Custom plugins directory set up: /etc/pwnagotchi/custom-plugins
+   mkdir /etc/pwnagotchi/custom-plugins
    ```
 
 2. Copy the `birthday.py` file to the custom plugins directory:
